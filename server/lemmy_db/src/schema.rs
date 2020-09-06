@@ -405,6 +405,7 @@ table! {
         enable_nsfw -> Bool,
         icon -> Nullable<Text>,
         banner -> Nullable<Text>,
+        enable_uploads -> Bool,
     }
 }
 
