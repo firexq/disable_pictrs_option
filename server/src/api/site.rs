@@ -160,6 +160,7 @@ impl Perform for CreateSite {
       open_registration: data.open_registration,
       enable_nsfw: data.enable_nsfw,
       updated: None,
+      enable_uploads: data.enable_uploads,
     };
 
     let create_site = move |conn: &'_ _| Site::create(conn, &site_form);
@@ -205,6 +206,7 @@ impl Perform for EditSite {
       enable_downvotes: data.enable_downvotes,
       open_registration: data.open_registration,
       enable_nsfw: data.enable_nsfw,
+      enable_uploads: data.enable_uploads,
     };
 
     let update_site = move |conn: &'_ _| Site::update(conn, 1, &site_form);
@@ -264,6 +266,7 @@ impl Perform for GetSite {
         open_registration: true,
         enable_nsfw: true,
         auth: login_response.jwt,
+        enable_uploads: true,
       };
       create_site.perform(context, websocket_id).await?;
       info!("Site {} created", setup.site_name);

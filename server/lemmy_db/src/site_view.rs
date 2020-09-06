@@ -21,6 +21,7 @@ table! {
     number_of_posts -> BigInt,
     number_of_comments -> BigInt,
     number_of_communities -> BigInt,
+    enable_uploads -> Bool,
   }
 }
 
@@ -47,6 +48,7 @@ pub struct SiteView {
   pub number_of_posts: i64,
   pub number_of_comments: i64,
   pub number_of_communities: i64,
+  pub enable_uploads: bool,
 }
 
 impl SiteView {

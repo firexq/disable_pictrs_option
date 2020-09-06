@@ -15,6 +15,7 @@ pub struct Site {
   pub enable_nsfw: bool,
   pub icon: Option<String>,
   pub banner: Option<String>,
+  pub enable_uploads: bool,
 }
 
 #[derive(Insertable, AsChangeset)]
@@ -30,6 +31,7 @@ pub struct SiteForm {
   // when you want to null out a column, you have to send Some(None)), since sending None means you just don't want to update that column.
   pub icon: Option<Option<String>>,
   pub banner: Option<Option<String>>,
+  pub enable_uploads: bool,
 }
 
 impl Crud<SiteForm> for Site {
