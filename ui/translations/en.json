@@ -191,6 +191,7 @@
     "open_registration": "Open Registration",
     "registration_closed": "Registration closed",
     "enable_nsfw": "Enable NSFW",
+    "enable_uploads": "Enable Uploads",
     "url": "URL",
     "body": "Body",
     "copy_suggested_title": "copy suggested title: {{title}}",

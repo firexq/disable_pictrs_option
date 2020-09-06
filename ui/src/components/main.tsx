@@ -107,6 +107,7 @@ export class Main extends Component<any, MainState> {
         enable_downvotes: null,
         open_registration: null,
         enable_nsfw: null,
+        enable_uploads: null,
         icon: null,
         banner: null,
         creator_preferred_username: null,

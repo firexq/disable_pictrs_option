@@ -43,6 +43,7 @@ export class AdminSettings extends Component<any, AdminSettingsState> {
         enable_downvotes: null,
         open_registration: null,
         enable_nsfw: null,
+        enable_uploads: null,
       },
       admins: [],
       banned: [],

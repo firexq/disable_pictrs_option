@@ -24,6 +24,7 @@ export class SiteForm extends Component<SiteFormProps, SiteFormState> {
       enable_downvotes: true,
       open_registration: true,
       enable_nsfw: true,
+      enable_uploads: true,
       name: null,
       icon: null,
       banner: null,
@@ -52,6 +53,7 @@ export class SiteForm extends Component<SiteFormProps, SiteFormState> {
         enable_downvotes: this.props.site.enable_downvotes,
         open_registration: this.props.site.open_registration,
         enable_nsfw: this.props.site.enable_nsfw,
+        enable_uploads: this.props.site.enable_uploads,
         icon: this.props.site.icon,
         banner: this.props.site.banner,
       };
@@ -188,6 +190,25 @@ export class SiteForm extends Component<SiteFormProps, SiteFormState> {
               <div class="form-check">
                 <input
                   class="form-check-input"
+                  id="create-site-enable-uploads"
+                  type="checkbox"
+                  checked={this.state.siteForm.enable_uploads}
+                  onChange={linkEvent(this, this.handleSiteEnableUploadsChange)}
+                />
+                <label
+                  class="form-check-label"
+                  htmlFor="create-site-enable-uploads"
+                >
+                  {i18n.t('enable_uploads')}
+                </label>
+              </div>
+            </div>
+          </div>
+          <div class="form-group row">
+            <div class="col-12">
+              <div class="form-check">
+                <input
+                  class="form-check-input"
                   id="create-site-open-registration"
                   type="checkbox"
                   checked={this.state.siteForm.open_registration}
@@ -261,6 +282,11 @@ export class SiteForm extends Component<SiteFormProps, SiteFormState> {
 
   handleSiteEnableNsfwChange(i: SiteForm, event: any) {
     i.state.siteForm.enable_nsfw = event.target.checked;
+    i.setState(i.state);
+  }
+
+  handleSiteEnableUploadsChange(i: SiteForm, event: any) {
+    i.state.siteForm.enable_uploads = event.target.checked;
     i.setState(i.state);
   }
 
